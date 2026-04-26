@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesan Spesial Untukmu</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #ffe4e1; /* Warna pink pastel */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            max-width: 400px;
+        }
+        h1 { color: #d63384; }
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        button {
+            padding: 15px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+        button:hover { transform: scale(1.05); }
+        
+        /* Warna Tombol */
+        .btn-hug { background: #ffadad; color: white; }
+        .btn-praise { background: #ffd6a5; color: #555; }
+        .btn-music { background: #9bf6ff; color: #555; }
+
+        #display-pesan {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: #333;
+            min-height: 50px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Halo Dhivaa! ✨</h1>
+    <p>Pilih satu tombol yang paling kamu butuhin sekarang:</p>
+
+    <div class="btn-group">
+        <button class="btn-hug" onclick="tampil('Virtual hug dikirim! 🤗 Kamu nggak sendirian, ada aku di sini.')">Klik kalau butuh pelukan</button>
+        <button class="btn-praise" onclick="tampil('Kamu itu kuat banget. Aku bangga liat cara kamu bertahan sejauh ini! 🌟')">Klik kalau butuh pujian</button>
+        <button class="btn-music" onclick="playMusic()">Klik kalau mau denger lagu tenang</button>
+    </div>
+
+    <div id="display-pesan"></div>
+</div>
+
+<script>
+    function tampil(teks) {
+        document.getElementById('display-pesan').innerHTML = teks;
+    }
+
+    function playMusic() {
+        document.getElementById('display-pesan').innerHTML = "Lagi nyari ketenangan ya? Coba dengerin playlist lo-fi di YouTube favoritmu! 🎧";
+        // Opsional: Buka link lagu otomatis
+        window.open('https://youtube.com', '_blank');
+    }
+</script>
+
+</body>
+</html>
